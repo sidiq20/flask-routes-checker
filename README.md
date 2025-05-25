@@ -8,7 +8,12 @@
 
 
 ## Fixed routes
-![Fixed routes screenshot]<img src="https://raw.githubusercontent.com/sidiq20/flask-route-checker/master/docs/fixed.png" width="600" alt="Broken routes example">
+<h3>Before</h3>
+<img src="https://raw.githubusercontent.com/sidiq20/flask-routes-checker/master/docs/fix.png" width="600" />
+
+<h3>After</h3>
+<img src="https://raw.githubusercontent.com/sidiq20/flask-routes-checker/master/docs/fixed.png" width="600" />
+
 
 
 ## Features
@@ -23,7 +28,7 @@
 ---
 ## Quick start
 
-![Broken routes screenshot]<img src="https://raw.githubusercontent.com/sidiq20/flask-route-checker/master/docs/fix.png" width="600" alt="Broken routes example">
+
 
 ```bash
 # install
