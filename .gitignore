@@ -1,0 +1,17 @@
+/venv
+.pypirc
+/dist/
+/flask_route_checker.egg-info
+# virtualenv
+venv/
+# build artifacts
+dist/
+build/
+*.egg-info/
+# IDE / OS junk
+.idea/
+.vscode/
+__pycache__/
+.DS_Store
+# secrets
+.pypirc
