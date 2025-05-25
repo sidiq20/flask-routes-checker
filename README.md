@@ -6,6 +6,10 @@
 
 ---
 
+
+## Fixed routes
+(https://raw.githubusercontent.com/sidiq20/flask-route-checker/main/docs/fixed.png)
+
 ## Features
 
 * ✅ scans all `.html` templates for `url_for()` usage  
@@ -25,6 +29,7 @@ pip install flask-route-checker
 
 # run from your Flask project root
 flask-route-checker                       # just report issues
+(https://raw.githubusercontent.com/sidiq20/flask-route-checker/main/docs/fix.png)
 flask-route-checker --fix --backup-dir .backups
 
 # possible erros 
