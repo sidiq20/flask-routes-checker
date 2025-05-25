@@ -8,7 +8,8 @@
 
 
 ## Fixed routes
-![Fixed routes screenshot](https://raw.githubusercontent.com/sidiq20/flask-route-checker/master/docs/fixed.png)
+![Fixed routes screenshot]<img src="https://raw.githubusercontent.com/sidiq20/flask-route-checker/master/docs/fixed.png" width="600" alt="Broken routes example">
+
 
 ## Features
 
@@ -20,8 +21,9 @@
 * 🏗️ supports plain `app = Flask(__name__)` *and* factory pattern
 
 ---
-https://raw.github.com/sidiq20/flask-routes-checker/blob/master/docs/fix.png
 ## Quick start
+
+![Broken routes screenshot]<img src="https://raw.githubusercontent.com/sidiq20/flask-route-checker/master/docs/fix.png" width="600" alt="Broken routes example">
 
 ```bash
 # install
@@ -29,7 +31,7 @@ pip install flask-route-checker
 
 # run from your Flask project root
 flask-route-checker                       # just report issues
-![Broken routes screenshot](https://raw.githubusercontent.com/sidiq20/flask-route-checker/master/docs/fix.png)
+
 flask-route-checker --fix --backup-dir .backups
 
 # possible erros 
