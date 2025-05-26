@@ -42,11 +42,24 @@
 ```bash
 # install
 pip install flask-route-checker
+```
 
 # run from your Flask project root
+```
 flask-route-checker                       # just report issues
-
+```
+```
 flask-route-checker --fix --backup-dir .backups
+```
+
+# Common Setup Scenarios
+if you use a factory pattern or non-standard structure, set the edntry point and templates explicity
+```
+flask-route-checker \
+  --app run.py \
+  --factory create_app \
+  --templates app/templates
+```
 
 # possible erros 
 ModuleNotFoundError: No module named 'routes'
@@ -54,10 +67,13 @@ two ways to fix
 
 1. run flask-route-checker from project root + add . to PYTHONPATH
     just run this from the same directory as app.py:
+    ```
     set PYTHONPATH=.
     flask-route-checker --app app.py # or you main file that runs your flask app 
+    ```
 
     if you are on GIT BASH ot UNIX:
+    ```
     PYTHONPATH=. flask-route-checker --app app.py
 
 2. Turn your routes/ into a proper python package
@@ -66,30 +82,52 @@ Make sure the routes/ folder has an __init__.py:
 ## for a diffrent or a robust project structure 
 
 # From your Flask project root, just scan for broken routes:
+```
 flask-route-checker
+```
 
 # Fix all broken routes (backups saved before changes)
+```
 flask-route-checker --fix --backup-dir .backups
+```
 
 touch routes/__init__.py to make it easier 
 
-| flag                       | purpose                                            |
-| -------------------------- | -------------------------------------------------- |
-| `--fix`                    | auto-patch broken routes                           |
-| `--dry-run`                | show diff, don’t write                             |
-| `--backup-dir DIR`         | where fixed templates are backed up                |
-| `--ignore-endpoint TEXT`   | skip endpoints containing TEXT (can pass multiple) |
-| `--report {json,markdown}` | dump a machine-readable report                     |
-| `--unused`                 | list endpoints defined but never used              |
-| `--diff`                   | colour diff view (needs **rich**)                  |
-| `--factory NAME`           | custom factory instead of `create_app`             |
+| Flag                     | Description                                       |                                |
+| ------------------------ | ------------------------------------------------- | ------------------------------ |
+| `--app PATH`             | Path to entry point file (default: `app.py`)      |                                |
+| `--factory NAME`         | If using app factory, name of factory function    |                                |
+| `--templates PATH`       | Templates directory (default: `templates`)        |                                |
+| `--fix`                  | Automatically fix broken routes                   |                                |
+| `--dry-run`              | Show what would change but don’t apply            |                                |
+| `--backup-dir DIR`       | Backup fixed templates to this directory          |                                |
+| `--ignore-endpoint TEXT` | Skip endpoints containing this text (repeatable)  |                                |
+| `--ignore-template TEXT` | Skip templates matching this path fragment        |                                |
+| \`--report json          | markdown\`                                        | Output machine-readable report |
+| `--unused`               | Show defined routes that aren’t used in templates |                                |
+| `--diff`                 | Show unified diff for changes (needs `rich`)      |                                |
+| `--fail-on-broken`       | Exit with code 1 if broken routes remain          |                                |
+| `--check-external`       | Check <a href> links in templates (slow)          |                                |
+| `--verbose`              | Show extra output for debugging                   |                                |
+| `--quiet`                | Silence all non-critical output                   |                                |
 
 
-<h1 align="center">Contributing</h1>
-1. Fork 🚀
-2. git clone your fork 
-3. pip install -e .[dev]
-4. Create a branch feat/my-awesome-thing
-5. PRs welcome! (Add test if you can)
 
-# ADIOS AMIGO
+
+<h1 align="center">🤝 Contributing</h1>
+1. Fork 🚀</br>
+2. git clone your fork </br>
+3. pip install -e .[dev]</br>
+4. Create a branch feat/my-awesome-thing</br>
+5. PRs welcome! (Add test if you can)</br>
+
+
+
+
+# Common Isses and fixes
+```
+ModuleNotFoundError: No module named 'routes'
+```
+## two ways to fix 
+
+# 🧞‍♂️ ADIOS AMIGO
