@@ -4,6 +4,10 @@
   <a href="https://pypi.org/project/flask-route-checker/"><img src="https://badge.fury.io/py/flask-route-checker.svg" /></a>
 </p>
 
+## 🔍 What It Does
+
+**`flask-route-checker`** is a CLI tool that scans your Jinja templates for broken `url_for()` calls and optionally auto-fixes them by suggesting or replacing with valid endpoint names.
+
 ---
 
 
@@ -16,14 +20,19 @@
 
 
 
-## Features
+## ✨ Features
 
-* ✅ scans all `.html` templates for `url_for()` usage  
-* 🚨 flags endpoints that don’t exist  
-* 🔧 **--fix** mode rewrites templates + creates backups  
-* 🎨 coloured output, dry-run diff viewer, ignore filters, JSON / MD report  
-* 🧹 detects unused routes, optional external link checker  
-* 🏗️ supports plain `app = Flask(__name__)` *and* factory pattern
+
+- ✅ Scans all `.html` templates for `url_for()` usage  
+- 🚨 Flags endpoints that don’t exist  
+- 🔧 `--fix` mode rewrites broken templates and creates backups  
+- 🎨 Colorized CLI output, dry-run diff viewer, and ignore filters  
+- 📄 Export results as JSON or Markdown reports  
+- 🧹 Detects unused routes  
+- 🌍 Optional `<a href>` external link checker  
+- 🏗️ Works with both:
+  - `app = Flask(__name__)`
+  - App factory pattern: `create_app()` or custom factory
 
 ---
 ## Quick start
@@ -53,6 +62,14 @@ two ways to fix
 
 2. Turn your routes/ into a proper python package
 Make sure the routes/ folder has an __init__.py:
+
+## for a diffrent or a robust project structure 
+
+# From your Flask project root, just scan for broken routes:
+flask-route-checker
+
+# Fix all broken routes (backups saved before changes)
+flask-route-checker --fix --backup-dir .backups
 
 touch routes/__init__.py to make it easier 
 
